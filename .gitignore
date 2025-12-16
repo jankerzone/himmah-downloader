@@ -1,0 +1,16 @@
+# PDFs (too large for GitHub)
+pdfs/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

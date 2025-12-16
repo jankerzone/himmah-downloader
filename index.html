@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arsip Digital LPM HIMMAH UII - Lembaga Pers Mahasiswa HIMMAH Universitas Islam Indonesia. Koleksi Majalah MUHIBBAH, Majalah HIMMAH, dan Buletin KOBARKobari sejak 1967.">
+    <meta name="keywords" content="LPM HIMMAH, MUHIBBAH, HIMMAH UII, Pers Mahasiswa, Arsip Majalah, KOBARKobari">
+    <title>Arsip Digital - LPM HIMMAH UII</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">📰</span>
+                <span class="logo-text">LPM HIMMAH</span>
+            </a>
+            <div class="nav-links">
+                <a href="#publications" class="nav-link">Publikasi</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="https://himmahonline.id/" target="_blank" class="nav-link nav-link-external">
+                    Kunjungi Website
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">📚 Arsip Digital</div>
+            <h1 class="hero-title">
+                Lembaga Pers Mahasiswa<br>
+                <span class="gradient-text">HIMMAH UII</span>
+            </h1>
+            <p class="hero-subtitle">
+                Menyimpan jejak sejarah pers mahasiswa sejak 1967. Dari MUHIBBAH hingga HIMMAH, 
+                dari buletin hingga majalah — arsip lengkap publikasi LPM HIMMAH Universitas Islam Indonesia.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalPublications">50+</span>
+                    <span class="stat-label">Publikasi</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1967</span>
+                    <span class="stat-label">Berdiri</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Kategori</span>
+                </div>
+            </div>
+            <a href="#publications" class="hero-cta">
+                Jelajahi Arsip
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section" id="publications">
+        <div class="container">
+            <div class="search-header">
+                <h2 class="section-title">Koleksi Publikasi</h2>
+                <p class="section-subtitle">Telusuri arsip majalah dan buletin bersejarah</p>
+            </div>
+            
+            <div class="filter-bar">
+                <div class="search-box">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Cari judul, tahun, atau kata kunci..." class="search-input">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        Semua
+                    </button>
+                    <button class="filter-btn" data-filter="muhibbah">
+                        <span class="filter-dot muhibbah"></span>
+                        MUHIBBAH
+                    </button>
+                    <button class="filter-btn" data-filter="himmah">
+                        <span class="filter-dot himmah"></span>
+                        HIMMAH
+                    </button>
+                    <button class="filter-btn" data-filter="kobarkobari">
+                        <span class="filter-dot kobarkobari"></span>
+                        KOBARKobari
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Grid -->
+    <section class="publications-section">
+        <div class="container">
+            <div class="publications-grid" id="publicationsGrid">
+                <!-- Publications will be loaded dynamically -->
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner"></div>
+                    <p>Memuat publikasi...</p>
+                </div>
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-icon">🔍</div>
+                <h3>Tidak ada hasil</h3>
+                <p>Coba kata kunci lain atau ubah filter kategori</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title">Tentang LPM HIMMAH</h2>
+                    <p class="about-text">
+                        <strong>Lembaga Pers Mahasiswa HIMMAH</strong> merupakan salah satu lembaga khusus 
+                        di bawah naungan Keluarga Mahasiswa Universitas Islam Indonesia (KM UII). 
+                    </p>
+                    <p class="about-text">
+                        HIMMAH berdiri pada <strong>11 Maret 1967</strong> dengan nama awal <em>Muhibbah</em>. 
+                        Pada tahun 1982, Muhibbah dibredel oleh rezim orde baru. Setelahnya Muhibbah 
+                        berganti nama menjadi <strong>HIMMAH</strong>.
+                    </p>
+                    <p class="about-text">
+                        Akun arsip digital ini menjadi wadah penerbitan arsip produk cetak yang pernah 
+                        diterbitkan di zaman MUHIBBAH dan HIMMAH. Baik itu buku, buletin, hingga majalah.
+                    </p>
+                    <div class="about-cta">
+                        <a href="https://himmahonline.id/" target="_blank" class="btn btn-primary">
+                            Kunjungi Website Utama
+                        </a>
+                    </div>
+                </div>
+                <div class="about-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1967</div>
+                        <div class="timeline-content">
+                            <h4>Berdiri sebagai MUHIBBAH</h4>
+                            <p>11 Maret 1967, lahir sebagai suara mahasiswa UII</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1982</div>
+                        <div class="timeline-content">
+                            <h4>Dibredel Orde Baru</h4>
+                            <p>MUHIBBAH dilarang beroperasi oleh rezim</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1982+</div>
+                        <div class="timeline-content">
+                            <h4>Bangkit sebagai HIMMAH</h4>
+                            <p>Melanjutkan perjuangan dengan nama baru</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Now</div>
+                        <div class="timeline-content">
+                            <h4>Arsip Digital</h4>
+                            <p>Melestarikan sejarah untuk generasi mendatang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📰</span>
+                    <span class="logo-text">LPM HIMMAH UII</span>
+                </div>
+                <p class="footer-text">
+                    Dikelola oleh Penelitian dan Pustaka, sub-bidang di bawah Redaksi LPM HIMMAH UII.
+                </p>
+                <div class="footer-links">
+                    <a href="https://himmahonline.id/" target="_blank">Website Utama</a>
+                    <a href="https://issuu.com/lpmhimmahuii" target="_blank">Issuu (Legacy)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LPM HIMMAH UII. Arsip Digital.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Reader Modal -->
+    <div class="modal" id="readerModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Judul Publikasi</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe id="pdfFrame" class="pdf-viewer" src=""></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="downloadLink" class="btn btn-primary" download>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
