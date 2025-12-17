@@ -370,7 +370,10 @@ Examples:
     parser.add_argument('--list', action='store_true', help='List all known publications')
     parser.add_argument('--all', action='store_true', help='Download ALL publications')
     parser.add_argument('--export', action='store_true', help='Export publication list for website')
-    parser.add_argument('--output', '-o', default='../pdfs', help='Output directory (default: ../pdfs)')
+    # Default output is the 'pdfs' folder in the project root (parent of tools/)
+    script_dir = Path(__file__).resolve().parent
+    default_output = script_dir.parent / 'pdfs'
+    parser.add_argument('--output', '-o', default=str(default_output), help=f'Output directory (default: {default_output})')
     parser.add_argument('--quiet', '-q', action='store_true', help='Suppress output')
     
     args = parser.parse_args()

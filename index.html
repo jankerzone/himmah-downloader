@@ -214,10 +214,10 @@
         </div>
     </footer>
 
-    <!-- PDF Reader Modal -->
+    <!-- PDF Reader Modal (Simplified) -->
     <div class="modal" id="readerModal">
         <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-content">
+        <div class="modal-content modal-content-simple">
             <div class="modal-header">
                 <h3 class="modal-title" id="modalTitle">Judul Publikasi</h3>
                 <button class="modal-close" id="modalClose">
@@ -228,10 +228,16 @@
                 </button>
             </div>
             <div class="modal-body">
-                <iframe id="pdfFrame" class="pdf-viewer" src=""></iframe>
+                <div class="pdf-container" id="pdfContainer">
+                    <!-- Paper-style PDF reader will be inserted here -->
+                </div>
+                <div class="pdf-loading" id="pdfLoading" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Memuat PDF...</p>
+                </div>
             </div>
-            <div class="modal-footer">
-                <a href="#" id="downloadLink" class="btn btn-primary" download>
+            <div class="modal-footer modal-footer-simple">
+                <a href="#" id="downloadLink" class="btn btn-primary btn-download" download>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -242,7 +248,7 @@
             </div>
         </div>
     </div>
-
-    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="app.js?v=6"></script>
 </body>
 </html>

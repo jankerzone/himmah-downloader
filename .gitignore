@@ -1,11 +1,15 @@
-# PDFs (too large for GitHub)
-pdfs/*.pdf
+# PDFs (hosted on R2, too large for GitHub)
+pdfs/
+
+# Thumbnails (hosted on R2)
+thumbnails/
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
 .env
+.venv/
 
 # OS
 .DS_Store
@@ -14,3 +18,16 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+.claude/
+
+# Wrangler (local state)
+.wrangler/
+
+# Build output
+dist/
+
+# Node
+node_modules/
+
+# Config with sensitive data / not needed for repo
+cors-rules.json
