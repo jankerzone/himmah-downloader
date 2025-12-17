@@ -120,6 +120,12 @@ body {
     font-size: 28px;
 }
 
+.logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 .logo-text {
     font-size: 18px;
     font-weight: 700;
